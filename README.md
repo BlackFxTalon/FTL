@@ -1,7 +1,7 @@
 # FTL
 
 <br>
-clone project - <code>git clone https://github.com/BlackFxTalon/NinJi-gulp-template-2021</code>
+clone project - <code>git clone https://github.com/BlackFxTalon/FTL</code>
 <br>
 install dependencies - <code>npm i</code>
 <br>
