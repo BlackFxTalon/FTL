@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>FTL: Прямая машина</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+    <div class="container">
+        <h3 class="title title--main-title">FTL: Прямая машина</h3>
+        <div class="row">
+            <form class="col-12 col-lg-6 col-xl-8 form" action="#">
+                <h4 class="title form__title form__title--item-1">Маршрут</h4>
+                <fieldset class="form__fieldset row">
+                    <label class="col-12 form__label">Откуда</label>
+                    <input class="col-12 form__input" type="text" name="from" id="from">
+                </fieldset>
+                <fieldset class="form__fieldset row">
+                    <label class="col-12 form__label">Куда</label>
+                    <input class="col-12 form__input" type="text" name="to" id="to">
+                </fieldset>
+                <h4 class="title form__title form__title--item-2">Транспорт</h4>
+                <div class="form__fieldset-row row">
+                    <fieldset class="form__fieldset row col-6 col-xl-3">
+                        <label class="form__label col-12">Грузоподъёмность</label>
+                        <div class="form__select-container col-12">
+                            <select class="form__select form__select--capacity" name="capacity" id="capacity">
+                                <option class="form__option" value="Не выбрана" selected>Не выбрана</option>
+                                <option class="form__option" value="Вариант 1">Вариант 1</option>
+                                <option class="form__option" value="Вариант 2">Вариант 2</option>
+                                <option class="form__option" value="Вариант 3">Вариант 3</option>
+                                <option class="form__option" value="Вариант 4">Вариант 4</option>
+                                <option class="form__option" value="Вариант 5">Вариант 5</option>
+                            </select>
+                        </div>
+                    </fieldset>
+                    <fieldset class="form__fieldset row col-6 col-xl-3">
+                        <label class="form__label col-12">Способ погрузки</label>
+                        <div class="form__select-container col-12">
+                            <select class="form__select" name="loading__method" id="loading__method">
+                                <option class="form__option" value="Не выбран" selected>Не выбран</option>
+                                <option class="form__option" value="Задняя">Задняя</option>
+                                <option class="form__option" value="Задняя">Задняя</option>
+                            </select>
+                        </div>
+                    </fieldset>
+                </div>
+                <h4 class="title form__title form__title--item-3">Груз</h4>
+                <div class="form__fieldset-row row">
+                    <fieldset class="form__fieldset row col-6 сol-lg-12 col-xl-3">
+                        <label class="form__label col-12">Тип груза</label>
+                        <div class="form__select-container col-12">
+                            <select class="form__select" name="cargo__type" id="cargo__type">
+                                <option class="form__option" value="Не выбран" selected>Не выбран</option>
+                                <option class="form__option" value="Вариант 1">Вариант 1</option>
+                                <option class="form__option" value="Вариант 2">Вариант 2</option>
+                            </select>
+                        </div>
+                    </fieldset>
+                    <fieldset class="form__fieldset d-none--desktop row col-6">
+                        <label class="form__label col-12">Объявленная ценность, ₽</label>
+                        <input class="form__input col-12" type="number" name="Declared-value" id="Declared-value" placeholder="≥ 1">
+                    </fieldset>
+                    <div class="form__fieldset-container--desktop-variant d-none--mobile row col-12">
+                        <fieldset class="form__fieldset row col-3 col-lg-6 col-xl-3">
+                            <label class="form__label col-12">Класс опасности</label>
+                            <div class="form__select-container col-12">
+                                <select class="form__select" name="class-danger" id="class-danger">
+                                    <option class="form__option" value="Не выбран" selected>Не выбран</option>
+                                    <option class="form__option" value="Класс 5 — Окисляющие вещества и органические перекиси">Класс 5 — Окисляющие вещества и органические перекиси</option>
+                                    <option class="form__option" value="Класс 5 — Окисляющие вещества и органические перекиси">Класс 5 — Окисляющие вещества и органические перекиси</option>
+                                </select>
+                            </div>
+                        </fieldset>
+                        <fieldset class="form__fieldset row col-3 col-lg-6 col-xl-3">
+                            <label class="form__label col-12">Объявленная ценность, ₽</label>
+                            <input class="form__input col-12" type="number" name="Declared-value" id="Declared-value" placeholder="≥ 1">
+                        </fieldset>
+                    </div>
+                </div>
+                <fieldset class="form__fieldset">
+                    <input class="form__input-checkbox" type="checkbox" name="temp__mode" id="temp__mode">
+                    <label class="form__label form__label-checkbox" for="temp__mode">Требуется температурный режим</label>
+                </fieldset>
+                <div class="form__fieldset-row d-none--desktop row">
+                    <fieldset class="form__fieldset row col-6">
+                        <label class="form__label col-12" for="from__degree">От, °C</label>
+                        <input class="form__input col-12" type="text" name="from__degree" id="from__degree">
+                    </fieldset>
+                    <fieldset class="form__fieldset row col-6">
+                        <label class="form__label col-12" for="to__degree">До, °C</label>
+                        <input class="form__input col-12" type="text" name="to__degree" id="to__degree">
+                    </fieldset>
+                </div>
+                <h4 class="title form__title form__title--item-4">Время</h4>
+                <div class="destination__container">
+                    <p class="destination__descr">Когда прибыть на точку</p>
+                    <p class="destination__info">700 км в день</p>
+                </div>
+                <fieldset class="form__fieldset row">
+                    <div class="form__radio-container row col-12">
+                        <label class="form__radio-label col-5" for="address-1">
+                            <input class="form__radio-input" type="radio" name="address" id="address-1" value="address-1">
+                            <span class="text-truncate text-truncate--gradient text-truncate--grey-gradient">Длинный адрес с градиентом</span>
+                        </label>
+                        <span class="form__choice-label">НЕ ВЫБРАНО</span>
+                    </div>
+                    <div class="form__radio-container col-12">
+                        <label class="form__radio-label" for="address-2">
+                            <input class="form__radio-input" type="radio" name="address" id="address-2" value="address-2" disabled>
+                            <span>Адрес не указан</span>
+                        </label>
+                        <span class="form__choice-label">НЕ ВЫБРАНО</span>
+                    </div>
+                </fieldset>
+                <fieldset class="form__fieldset row">
+                    <label class="form__label col-12" for="order-commentary">Комментарий к заказу</label>
+                    <textarea class="form__textarea col-12" name="order-commentary" id="order-commentary" placeholder="Укажите особенности въезда на территорию склада или подъезда к адресу"></textarea>
+                </fieldset>
+            </form>
+            <div class="col-12 col-lg-6 col-xl-4 tooltip">
+                <p><span>Для расчета стоимости необходимо ввести параметры груза, пункты отправки и прибытия.</span></p>
+            </div>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

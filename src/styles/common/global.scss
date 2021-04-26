@@ -1,0 +1,45 @@
+/* global styles - start */
+:root {
+    --black-color: black;
+    --white-color: #ffffff;
+    --red-color: #ef483e;
+    --green-color: green;
+    --lightgrey-color: #717174;
+    --grey-color: #4b4b4f;
+    --opacity-white-color: #cfcfcf;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+    font-family: Helvetica Neue, sans-serif;
+    font-size: toRem(16);
+    background-color: #343539;
+    color: var(--white-color);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+.d-none--desktop {
+    @include media-large {
+        display: none;
+    }
+}
+.d-none--mobile {
+    @include media-custom-max(992px) {
+        display: none;
+    }
+}
+/* global styles - end */
